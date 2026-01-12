@@ -12,6 +12,9 @@ jobs:
   format:
     name: Check code formatting
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ML_ops_exercise
 
     steps:
       - name: Checkout code
