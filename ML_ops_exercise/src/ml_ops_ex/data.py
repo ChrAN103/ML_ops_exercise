@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import torch
 import typer
 from torch.utils.data import Dataset
 
@@ -24,9 +25,6 @@ def preprocess(data_path: Path, output_folder: Path) -> None:
     print("Preprocessing data...")
     dataset = MyDataset(data_path)
     dataset.preprocess(output_folder)
-
-
-import torch
 
 
 def normalize(images: torch.Tensor) -> torch.Tensor:

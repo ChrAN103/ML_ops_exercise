@@ -1,10 +1,4 @@
-import sys
-import os
-
-import torch
-# Add the source directory to sys.path relative to this file
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src/ml_ops_ex")))
-from train import train
+from ml_ops_ex.train import train
 
 def test_training():
     """Test the training function runs without errors."""

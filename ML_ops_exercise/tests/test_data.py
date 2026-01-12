@@ -1,13 +1,4 @@
 import torch
-from torch.utils.data import Dataset
-import os
-import sys
-
-# Add src to path so we can import ml_ops_ex
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
-
-from tests import _PATH_DATA
-# from _PATH_DATA import raw # This is invalid because _PATH_DATA is a string path, not a module
 from ml_ops_ex.data import corrupt_mnist as raw
 
 # def test_my_dataset():

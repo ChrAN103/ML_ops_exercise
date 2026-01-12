@@ -1,6 +1,3 @@
-from ml_ops_ex.model import Model
-from ml_ops_ex.data import MyDataset
-
 import matplotlib.pyplot as plt
 import torch
 import typer
