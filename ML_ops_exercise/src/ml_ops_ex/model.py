@@ -33,6 +33,10 @@ class Model(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward pass."""
+        if x.ndim != 4:
+            raise ValueError(f"Expected input to be 4D tensor, got {x.ndim}D tensor instead.")
+        if x.shape[1:] != (1, 28, 28):
+            raise ValueError(f"Expected input shape to be (N, 1, 28, 28), got {x.shape} instead.")
         x = torch.relu(self.conv1(x))
         x = torch.max_pool2d(x, 2, 2)
         x = torch.relu(self.conv2(x))

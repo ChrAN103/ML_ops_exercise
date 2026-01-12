@@ -1,0 +1,8 @@
+# .gitattributes
+# Enforce LF (Unix style) line endings for Python and config files
+*.py text eol=lf
+*.toml text eol=lf
+uv.lock text eol=lf
+
+# Auto-detect text files and normalize them
+* text=auto

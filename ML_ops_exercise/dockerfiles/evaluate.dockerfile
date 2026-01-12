@@ -1,18 +1,3 @@
-# FROM ghcr.io/astral-sh/uv:python3.11-alpine AS base
-
-# COPY uv.lock uv.lock
-# COPY pyproject.toml pyproject.toml
-
-# RUN uv sync --frozen --no-install-project
-
-# COPY src src/
-
-# RUN uv sync --frozen
-
-# ENTRYPOINT ["uv", "run", "src/ml_ops_ex/train.py"]
-
-
-# Base image
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 RUN apt update && \
@@ -23,12 +8,12 @@ COPY uv.lock uv.lock
 COPY pyproject.toml pyproject.toml
 COPY README.md README.md
 COPY src/ src/
-COPY data/ data/
 COPY LICENSE LICENSE
 COPY models/ models/
 COPY reports/ reports/
+COPY data/ data/
 
 WORKDIR /
 RUN uv sync --locked --no-cache --no-install-project
 
-ENTRYPOINT ["uv", "run", "src/ml_ops_ex/train.py"]
+ENTRYPOINT ["uv", "run", "src/ml_ops_ex/evaluate.py"]
